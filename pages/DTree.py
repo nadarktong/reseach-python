@@ -38,3 +38,12 @@ web_traffic = st.number_input('Insert web_traffic (-1, 0, or 1)', -1, 1, 0)
 url_length = st.number_input('Insert URL_Length (-1, 0, or 1)', -1, 1, 0)
 age_of_domain = st.number_input('Insert age_of_domain (-1, 0, or 1)', -1, 1, 0)
 having_ip_address = st.number_input('Insert having_IP_Address (0 or 1)', 0, 1, 0)
+
+if st.button("Predict"):
+    x_input = [[sfh, popup_window, ssl_final_state, request_url,
+                url_of_anchor, web_traffic, url_length, 
+                age_of_domain, having_ip_address]]
+    y_pred = dtree.predict(x_input)[0]
+
+    label_map = {-1: "Suspicious", 0: "Legitimate", 1: "Phishing"}
+    st.write(f"The website is predicted to be: **{label_map.get(y_pred, 'Unknown')}**")
