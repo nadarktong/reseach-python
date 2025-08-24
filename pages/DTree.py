@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 st.header("Decision Tree for Phishing Website Classification")
 
 # Load the dataset
-df = pd.read_csv("MultipleFiles/Website Phishing.csv")
+df = pd.read_csv("/data/Website Phishing.csv")
 st.write(df.head(10))
 
 # Define features and target variable
