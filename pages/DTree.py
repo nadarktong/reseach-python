@@ -47,3 +47,10 @@ if st.button("Predict"):
 
     label_map = {-1: "Suspicious", 0: "Legitimate", 1: "Phishing"}
     st.write(f"The website is predicted to be: **{label_map.get(y_pred, 'Unknown')}**")
+
+    
+# Accuracy
+y_predict = dtree.predict(x_test)
+score = accuracy_score(y_test, y_predict)
+st.write(f'Prediction accuracy: **{(score * 100):.2f}%**')
+
