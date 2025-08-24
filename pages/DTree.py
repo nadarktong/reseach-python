@@ -54,3 +54,9 @@ y_predict = dtree.predict(x_test)
 score = accuracy_score(y_test, y_predict)
 st.write(f'Prediction accuracy: **{(score * 100):.2f}%**')
 
+# Decision tree visualization
+fig, ax = plt.subplots(figsize=(20, 15))
+tree.plot_tree(dtree, feature_names=features,
+               class_names=['Legitimate', 'Phishing', 'Suspicious'],
+               filled=True, fontsize=10, ax=ax)
+st.pyplot(fig)
