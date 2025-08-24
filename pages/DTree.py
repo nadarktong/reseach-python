@@ -12,3 +12,16 @@ st.header("Decision Tree for Phishing Website Classification")
 df = pd.read_csv("./data/Website Phishing.csv")
 st.write(df.head(10))
 
+# Define features and target
+features = ['SFH', 'popUpWidnow', 'SSLfinal_State', 'Request_URL',
+            'URL_of_Anchor', 'web_traffic', 'URL_Length',
+            'age_of_domain', 'having_IP_Address']
+X = df[features]
+y = df['Result']
+
+# Train/test split
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=200)
+
+# Train model
+ModelDtree = DecisionTreeClassifier()
+dtree = ModelDtree.fit(x_train, y_train)
