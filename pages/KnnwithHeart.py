@@ -36,7 +36,7 @@ if st.checkbox("แสดง Pairplot (ใช้เวลาประมวล�
     fig2 = sns.pairplot(dt, hue='Result')
     st.pyplot(fig2)
 
-st.subheader("🔎 ทำนายข้อมูลเว็บไซต์")
+st.subheader("🔎 วิเคราะห์ข้อมูลเว็บไซต์")
 
 # กรอกค่าฟีเจอร์
 sfh = st.number_input('Insert SFH (-1, 0, 1)', -1, 1, 0)
@@ -49,7 +49,7 @@ url_length = st.number_input('Insert URL_Length (-1, 0, 1)', -1, 1, 0)
 age_of_domain = st.number_input('Insert age_of_domain (-1, 0, 1)', -1, 1, 0)
 having_ip_address = st.number_input('Insert having_IP_Address (0, 1)', 0, 1, 0)
 
-if st.button("ทำนายผล"):
+if st.button("วิเคราะห์ข้อมูล"):
     # แยก features/target
     X = dt.drop('Result', axis=1)
     y = dt['Result']
@@ -66,6 +66,6 @@ if st.button("ทำนายผล"):
     out = Knn_model.predict(x_input)
 
     label_map = {-1: "Suspicious", 0: "Legitimate", 1: "Phishing"}
-    st.write(f"### ✅ ผลการทำนาย: {label_map.get(out[0], 'Unknown')}")
+    st.write(f"### ✅ ผลการวิเคราะห์ข้อมูล: {label_map.get(out[0], 'Unknown')}")
 else:
-    st.write("⏳ รอการทำนาย...")
+    st.write("⏳ รอวิเคราะห์ข้อมูล...")

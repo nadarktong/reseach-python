@@ -40,7 +40,7 @@ if st.button("วิเคราะห์ข้อมูล"):
     y_predict = clf.predict(x_input)
     
     label_map = {-1: "Suspicious", 0: "Legitimate", 1: "Phishing"}
-    st.write(f"### ✅ ผลการพยากรณ์: {label_map.get(y_predict[0], 'Unknown')}")
+    st.write(f"### ✅ ผลการวิเคราะห์ข้อมูล: {label_map.get(y_predict[0], 'Unknown')}")
     
     st.button("ไม่วิเคราะห์ข้อมูล")
 else:
