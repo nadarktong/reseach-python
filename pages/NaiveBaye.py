@@ -31,7 +31,7 @@ url_length = st.number_input('URL_Length (ความยาว URL, -1, 0, 1)',
 age_of_domain = st.number_input('age_of_domain (อายุโดเมน, -1, 0, 1)', -1, 1, 0)
 having_ip_address = st.number_input('having_IP_Address (มีการใช้ IP Address หรือไม่, 0, 1)', 0, 1, 0)
 
-if st.button("พยากรณ์"):
+if st.button("วิเคราะห์"):
     # เตรียมข้อมูล input
     x_input = [[sfh, popup_window, ssl_final_state,
                 request_url, url_of_anchor, web_traffic,
