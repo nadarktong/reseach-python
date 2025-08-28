@@ -21,15 +21,15 @@ clf.fit(X_train, y_train)
 
 st.subheader("กรุณาป้อนข้อมูลเพื่อพยากรณ์")
 
-sfh = st.number_input('Insert SFH (-1, 0, 1)', -1, 1, 0)
-popup_window = st.number_input('Insert popUpWidnow (-1, 0, 1)', -1, 1, 0)
-ssl_final_state = st.number_input('Insert SSLfinal_State (-1, 0, 1)', -1, 1, 0)
-request_url = st.number_input('Insert Request_URL (-1, 0, 1)', -1, 1, 0)
-url_of_anchor = st.number_input('Insert URL_of_Anchor (-1, 0, 1)', -1, 1, 0)
-web_traffic = st.number_input('Insert web_traffic (-1, 0, 1)', -1, 1, 0)
-url_length = st.number_input('Insert URL_Length (-1, 0, 1)', -1, 1, 0)
-age_of_domain = st.number_input('Insert age_of_domain (-1, 0, 1)', -1, 1, 0)
-having_ip_address = st.number_input('Insert having_IP_Address (0, 1)', 0, 1, 0)
+sfh = st.number_input('SFH (การส่งฟอร์ม, -1, 0, 1)', -1, 1, 0)
+popup_window = st.number_input('popUpWidnow (หน้าต่างป๊อปอัพ, -1, 0, 1)', -1, 1, 0)
+ssl_final_state = st.number_input('SSLfinal_State (สถานะ SSL, -1, 0, 1)', -1, 1, 0)
+request_url = st.number_input('Request_URL (การเรียกใช้ URL, -1, 0, 1)', -1, 1, 0)
+url_of_anchor = st.number_input('URL_of_Anchor (ลิงก์ Anchor, -1, 0, 1)', -1, 1, 0)
+web_traffic = st.number_input('web_traffic (ปริมาณการเข้าชมเว็บ, -1, 0, 1)', -1, 1, 0)
+url_length = st.number_input('URL_Length (ความยาว URL, -1, 0, 1)', -1, 1, 0)
+age_of_domain = st.number_input('age_of_domain (อายุโดเมน, -1, 0, 1)', -1, 1, 0)
+having_ip_address = st.number_input('having_IP_Address (มีการใช้ IP Address หรือไม่, 0, 1)', 0, 1, 0)
 
 if st.button("พยากรณ์"):
     # เตรียมข้อมูล input
@@ -42,6 +42,6 @@ if st.button("พยากรณ์"):
     label_map = {-1: "Suspicious", 0: "Legitimate", 1: "Phishing"}
     st.write(f"### ✅ ผลการพยากรณ์: {label_map.get(y_predict[0], 'Unknown')}")
     
-    st.button("ไม่พยากรณ์")
+    st.button("ไม่วิเคราะห์")
 else:
-    st.button("ไม่พยากรณ์")
+    st.button("ไม่วิเคราะห์")
