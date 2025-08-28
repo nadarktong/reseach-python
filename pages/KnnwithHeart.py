@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 
 st.title('การทำนายเว็บไซต์ฟิชชิ่งด้วยเทคนิค K-Nearest Neighbor (KNN)')
 
-with col1:
+col1, = st.columns(2)
+
+ col1:
    st.header("")
    st.image("./img/phishing3.jpg")
 
