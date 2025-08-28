@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 clf = GaussianNB()
 clf.fit(X_train, y_train)
 
-st.subheader("กรุณาป้อนข้อมูลเพื่อพยากรณ์")
+st.subheader("กรุณาป้อนข้อมูลเพื่อวิเคราะห์ข้อมูล")
 
 sfh = st.number_input('SFH (การส่งฟอร์ม, -1, 0, 1)', -1, 1, 0)
 popup_window = st.number_input('popUpWidnow (หน้าต่างป๊อปอัพ, -1, 0, 1)', -1, 1, 0)
@@ -31,7 +31,7 @@ url_length = st.number_input('URL_Length (ความยาว URL, -1, 0, 1)',
 age_of_domain = st.number_input('age_of_domain (อายุโดเมน, -1, 0, 1)', -1, 1, 0)
 having_ip_address = st.number_input('having_IP_Address (มีการใช้ IP Address หรือไม่, 0, 1)', 0, 1, 0)
 
-if st.button("วิเคราะห์"):
+if st.button("วิเคราะห์ข้อมูล"):
     # เตรียมข้อมูล input
     x_input = [[sfh, popup_window, ssl_final_state,
                 request_url, url_of_anchor, web_traffic,
@@ -42,6 +42,6 @@ if st.button("วิเคราะห์"):
     label_map = {-1: "Suspicious", 0: "Legitimate", 1: "Phishing"}
     st.write(f"### ✅ ผลการพยากรณ์: {label_map.get(y_predict[0], 'Unknown')}")
     
-    st.button("ไม่วิเคราะห์")
+    st.button("ไม่วิเคราะห์ข้อมูล")
 else:
-    st.button("ไม่วิเคราะห์")
+    st.button("ไม่วิเคราะห์ข้อมูล")
