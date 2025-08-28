@@ -5,8 +5,6 @@ import streamlit as st
 
 st.title("Naive Bayes: การจำแนกเว็บไซต์ฟิชชิ่ง")
 
-st.columns(1)
-
    st.header("")
    st.image("./img/phishing4.jpg")
 
