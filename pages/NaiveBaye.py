@@ -5,6 +5,11 @@ import streamlit as st
 
 st.title("Naive Bayes: การจำแนกเว็บไซต์ฟิชชิ่ง")
 
+with col1:
+   st.header("")
+   st.image("./img/phishing4.jpg")
+
+
 # โหลดข้อมูล Website Phishing
 df = pd.read_csv("./data/Website Phishing.csv")
 

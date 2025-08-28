@@ -7,6 +7,11 @@ import matplotlib.pyplot as plt
 
 st.title('การทำนายเว็บไซต์ฟิชชิ่งด้วยเทคนิค K-Nearest Neighbor (KNN)')
 
+with col1:
+   st.header("")
+   st.image("./img/phishing3.jpg")
+
+
 # โหลด dataset
 dt = pd.read_csv("./data/Website Phishing.csv")
 

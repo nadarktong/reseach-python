@@ -8,6 +8,17 @@ from sklearn.metrics import accuracy_score
 
 st.header("Decision Tree for Phishing Website Classification")
 
+
+col1, col2 = st.columns(2)
+
+with col1:
+   st.header("")
+   st.image("./img/phishing1.jpg")
+
+with col2:
+   st.header("")
+   st.image("./img/phishing2.jpg")
+
 # Load dataset
 df = pd.read_csv("./data/Website Phishing.csv")
 st.write(df.head(10))
@@ -39,7 +50,7 @@ url_length = st.number_input('URL_Length (ความยาว URL, -1, 0, 1)',
 age_of_domain = st.number_input('age_of_domain (อายุโดเมน, -1, 0, 1)', -1, 1, 0)
 having_ip_address = st.number_input('having_IP_Address (มีการใช้ IP Address หรือไม่, 0, 1)', 0, 1, 0)
 
-if st.button("Predict"):
+if st.button("วิเคราะห์ข้อมูล"):
     x_input = [[sfh, popup_window, ssl_final_state, request_url,
                 url_of_anchor, web_traffic, url_length, 
                 age_of_domain, having_ip_address]]
