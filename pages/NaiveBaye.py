@@ -5,7 +5,7 @@ import streamlit as st
 
 st.title("Naive Bayes: การจำแนกเว็บไซต์ฟิชชิ่ง")
 
-col1 = st.columns(2)
+col1 = st.columns(1)
 
 col1:
    st.header("")
